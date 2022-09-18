@@ -26,7 +26,7 @@ export async function checkNumberStatus(id, conn = false) {
     if (lid) {
       return await Store.checkNumberMD
         .queryExists(lid.id)
-        .queryExists(new Store.WidFactory.createWid(id)).queryExists(new Store.WidFactory.createWid(id))
+        .queryExists(new Store.WidFactory.createWid(lid.id)).queryExists(new Store.WidFactory.createWid(lid.id))
         .then((result) => {
           if (!!result && typeof result === 'object') {
             const data = {
